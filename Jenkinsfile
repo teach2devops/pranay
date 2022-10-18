@@ -1,12 +1,10 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("A"){
-            steps{
-                echo "========executing A========"
+    stages {
+        stage('build') {
+            steps {
+                sh 'cat /etc/*release'
             }
-            
         }
     }
-    
 }
