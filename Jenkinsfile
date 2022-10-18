@@ -1,20 +1,22 @@
-pipeline{
+pipeline {
     agent any
-    stages{
-        stage("Build stage"){
-            steps{
-                echo "Build stage"
-            }
-            
-        }
-    }
-    stages{
-        stage("test stage"){
-            steps{
-                echo "Test stage"
-            }
-            
-        }
-    }
     
+    stages {
+        stage("Build") {
+            steps {
+                echo "Build stage."
+                echo "Hello $params.TEST_STRING"
+            }
+        }
+        stage("Test") {
+            steps {
+                echo "Test stage."
+            }
+        }
+        stage("Release") {
+            steps {
+                echo "Release stage."
+            }
+        }
+    }
 }
