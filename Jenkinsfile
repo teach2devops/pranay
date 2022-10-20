@@ -3,20 +3,20 @@ pipeline{
     stages{
         stage("A"){
             steps{
-                echo "========executing A========"
+                echo "========executing Dev A========"
             }
             
         }
     
         stage("B"){
             steps{
-                echo "========executing B========"
+                echo "========executing Dev B========"
             }
             
         }
         stage("C"){
             steps{
-                echo "========executing C========"
+                echo "========executing Dev C========"
             }
             
         }
