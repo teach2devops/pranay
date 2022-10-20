@@ -1,27 +1,29 @@
 pipeline{
     agent any
     stages{
-        stage("A"){
+        stage("install package"){
             steps{
 
-                echo "========executing main A========"
+                sh 'sudo yum install httpd -y'
 
             }
             
         }
     
-        stage("B"){
+        stage("start service"){
             steps{
 
-                echo "========executing Main B========"
+                sh 'sudo systemctl start httpd'
+
 
             }
             
         }
-        stage("C"){
+        stage("Deploy stage"){
             steps{
 
-                echo "========executing Main C ========"
+                sh 'sudo cp * /var/www/html/'
+
 
                 
             }
