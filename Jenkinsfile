@@ -1,15 +1,26 @@
-pipeline {
+pipeline{
     agent any
-    stages {
-        stage('OS Version') {
-            steps {
-                sh 'cat /etc/*release'
+    stages{
+        stage("A"){
+            steps{
+                echo "========executing main A========"
             }
+            
         }
-        stage('Package Instalaltion') {
-            steps {
-                sh 'mkdir /tmp/amazon'
+    
+        stage("B"){
+            steps{
+                echo "========executing Main B========"
             }
+            
         }
+        stage("C"){
+            steps{
+                echo "========executing Main C ========"
+            }
+            
+        }
+        
     }
+    
 }
